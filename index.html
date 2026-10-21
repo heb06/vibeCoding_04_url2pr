@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="웹 주소를 QR 코드로 바꾸고 JPG 이미지로 저장하는 URL2QR">
+  <title>URL2QR · URL을 QR 코드로</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="ambient" aria-hidden="true"></div>
+  <header class="site-header wrap">
+    <a class="brand" href="./" aria-label="URL2QR 홈"><img src="img/logo.png" alt="URL2QR 로고"><span><strong>URL2QR</strong><small>링크를 QR 코드로</small></span></a>
+    <span class="header-chip">QUICK · SIMPLE · FREE</span>
+  </header>
+  <main class="wrap">
+    <section class="intro"><p class="eyebrow">MAKE YOUR LINK SCANNABLE</p><h1>링크를 한 번에,<br><span>QR 코드로 바꿔보세요.</span></h1><p>웹 주소를 입력하고 생성하기를 누르면 바로 QR 코드가 만들어집니다.<br class="desktop-only"> QR 이미지는 JPG 파일로 저장할 수 있어요.</p></section>
+    <section class="workspace panel" aria-labelledby="form-title">
+      <form id="qr-form" class="url-form">
+        <label id="form-title" for="url-input">변환할 URL</label>
+        <div class="input-row"><input id="url-input" type="url" placeholder="https://example.com" autocomplete="url" required><button type="submit" id="generate-btn">QR 생성하기 <span aria-hidden="true">↗</span></button></div>
+        <p class="hint">예: https://www.sdu.ac.kr/</p>
+      </form>
+      <div id="result-area" class="result-area" hidden>
+        <div class="result-heading"><div><p class="eyebrow">YOUR QR CODE</p><h2>스캔하거나 이미지로 저장하세요</h2></div><span class="ready-tag">● 생성 완료</span></div>
+        <div class="qr-card"><button id="download-qr" class="qr-image-button" type="button" title="QR 코드를 JPG로 다운로드"><span id="qr-code" aria-label="생성된 QR 코드"></span><span class="download-overlay">눌러서 JPG로 저장 ↓</span></button><p id="result-url" class="result-url"></p></div>
+        <button id="reset-btn" type="button" class="reset-button">다른 URL 만들기</button>
+      </div>
+      <p id="status-message" class="status-message" role="status" aria-live="polite"></p>
+    </section>
+    <section class="steps"><article><span>01</span><div><strong>URL 입력</strong><p>QR 코드로 만들 웹 주소를 입력합니다.</p></div></article><article><span>02</span><div><strong>QR 생성</strong><p>생성하기를 눌러 코드를 확인합니다.</p></div></article><article><span>03</span><div><strong>JPG 저장</strong><p>QR 코드를 누르면 이미지로 다운로드됩니다.</p></div></article></section>
+    <footer class="footer"><span>URL2QR</span><span>주소를 공유하는 새로운 방법</span></footer>
+  </main>
+</body>
+</html>
